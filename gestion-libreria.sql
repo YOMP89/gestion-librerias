@@ -44,3 +44,31 @@ CREATE TABLE Ventas (
     FOREIGN KEY (cliente_id) REFERENCES Clientes(cliente_id),
     FOREIGN KEY (libro_id) REFERENCES Libros(libro_id)
 );
+
+-- Insertando autores
+INSERT INTO Autores (nombre, nacionalidad) VALUES 
+('Gabriel García Márquez', 'Colombiana'),
+('Jane Austen', 'Británica'),
+('J.K. Rowling', 'Británica');
+
+-- Insertando géneros
+INSERT INTO Generos (nombre) VALUES 
+('Ficción'),
+('Romance'),
+('Fantasía');
+
+-- Insertando libros
+INSERT INTO Libros (titulo, autor_id, genero_id, fecha_publicacion, precio) VALUES 
+('Cien años de soledad', 1, 1, '1967-06-05', 19.99),
+('Orgullo y prejuicio', 2, 2, '1813-01-28', 12.50),
+('Harry Potter y la piedra filosofal', 3, 3, '1997-06-26', 24.99);
+
+-- Insertando clientes
+INSERT INTO Clientes (nombre, direccion, telefono) VALUES 
+('Juan Pérez', 'Calle Falsa 123', '123456789'),
+('María López', 'Av. Siempre Viva 456', '987654321');
+
+-- Insertando ventas
+INSERT INTO Ventas (cliente_id, libro_id, fecha_venta, cantidad) VALUES 
+(1, 1, '2024-10-23', 1),
+(2, 3, '2024-10-23', 2);
