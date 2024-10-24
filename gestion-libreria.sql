@@ -72,3 +72,21 @@ INSERT INTO Clientes (nombre, direccion, telefono) VALUES
 INSERT INTO Ventas (cliente_id, libro_id, fecha_venta, cantidad) VALUES 
 (1, 1, '2024-10-23', 1),
 (2, 3, '2024-10-23', 2);
+
+-- Listar todos los libros
+SELECT * FROM Libros;
+
+-- Ver información de clientes
+SELECT * FROM Clientes;
+
+-- Consultar ventas realizadas
+SELECT V.venta_id, C.nombre AS Cliente, L.titulo AS Libro, V.fecha_venta, V.cantidad
+FROM Ventas V
+JOIN Clientes C ON V.cliente_id = C.cliente_id
+JOIN Libros L ON V.libro_id = L.libro_id;
+
+-- Buscar libros por género
+SELECT L.titulo, G.nombre AS Genero
+FROM Libros L
+JOIN Generos G ON L.genero_id = G.genero_id
+WHERE G.nombre = 'Fantasía';
